@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const CLIENT_ID = 'TU_CLIENT_ID'; // Reemplaza con tu Client ID de Spotify
-const CLIENT_SECRET = 'TU_CLIENT_SECRET'; // Reemplaza con tu Client Secret de Spotify
+const CLIENT_ID = '30e57165574d4388860532e27daa550e'; // Reemplaza con tu Client ID de Spotify
+const CLIENT_SECRET = 'b4cc481c0da34c1ea906eca7f9350204'; // Reemplaza con tu Client Secret de Spotify
 const BASE_URL = 'https://api.spotify.com/v1';
 
 export const getAccessToken = async () => {
