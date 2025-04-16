@@ -1,0 +1,40 @@
+.library-page {
+  padding: 1rem;
+}
+
+.favorites-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.album-cover {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.song-artist {
+  color: #555;
+  margin: 0;
+}

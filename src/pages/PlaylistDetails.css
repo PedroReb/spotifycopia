@@ -1,0 +1,22 @@
+.playlist-details {
+  padding: 1rem;
+  color: white;
+}
+
+.songs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.song-item {
+  padding: 0.5rem;
+  background-color: #282828;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.song-item:hover {
+  background-color: #1db954;
+  color: white;
+}

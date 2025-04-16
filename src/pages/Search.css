@@ -1,0 +1,28 @@
+.toggle-favorite {
+    background-color: #1db954;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-favorite:hover {
+    background-color: #1ed760;
+  }
+  
+  /* filepath: /Users/pedroreb/Documents/spotifycopia/src/pages/Library.css */
+  .remove-favorite {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .remove-favorite:hover {
+    background-color: #c0392b;
+  }
