@@ -25,14 +25,7 @@ function Home() {
 
   return (
     <div className="home">
-      <div className="sidebar">
-        <h1 className="logo">SpotifyCopia</h1>
-        <ul className="nav-links">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/search">Buscar</a></li>
-          <li><a href="/library">Tu Biblioteca</a></li>
-        </ul>
-      </div>
+    
       <div className="main-content">
         <header className="header">
           <h2>{getGreeting()}</h2>

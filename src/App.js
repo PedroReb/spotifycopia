@@ -1,22 +1,33 @@
-import React, { useState } from 'react'; // Importa React y useState
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importa Router, Routes y Route
-import Navbar from './components/Navbar'; // Importa el componente Navbar
-import Player from './components/Player'; // Importa el componente Player
-import Home from './pages/Home'; // Importa la página Home
-import Search from './pages/Search'; // Importa la página Search
-import Library from './pages/Library'; // Importa la página Library
-import PlaylistDetails from './pages/PlaylistDetails'; // Importa la página PlaylistDetails
-import './App.css'; // Importa los estilos globales
+import React, { useState } from 'react'; // Importa useState
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Player from './components/Player';
+import Home from './pages/Home';
+import Search from './pages/Search';
+import Library from './pages/Library';
+import PlaylistDetails from './pages/PlaylistDetails';
+import './App.css';
 
 function App() {
-  const [currentSong, setCurrentSong] = useState(null);
+  const [currentSong, setCurrentSong] = useState(null); // Estado para la canción actual
+  const [favorites, setFavorites] = useState([]); // Estado para las canciones favoritas
 
   const handleSongSelect = (song) => {
     setCurrentSong({
-      title: song.title,
-      artist: song.artist,
+      title: song.name,
+      artist: song.artists[0].name,
       preview_url: song.preview_url,
     });
+  };
+
+  const handleToggleFavorite = (song) => {
+    if (favorites.some((fav) => fav.id === song.id)) {
+      // Si la canción ya está en favoritos, la elimina
+      setFavorites(favorites.filter((fav) => fav.id !== song.id));
+    } else {
+      // Si no está en favoritos, la añade
+      setFavorites([...favorites, song]);
+    }
   };
 
   return (
@@ -25,8 +36,25 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/search" element={<Search onSongSelect={handleSongSelect} />} />
-          <Route path="/library" element={<Library />} />
+          <Route
+            path="/search"
+            element={
+              <Search
+                onSongSelect={handleSongSelect}
+                onToggleFavorite={handleToggleFavorite}
+                favorites={favorites} // Pasa favorites como prop
+              />
+            }
+          />
+          <Route
+            path="/library"
+            element={
+              <Library
+                favorites={favorites}
+                onToggleFavorite={handleToggleFavorite}
+              />
+            }
+          />
           <Route
             path="/playlists/:playlistId"
             element={<PlaylistDetails onSongSelect={handleSongSelect} />}
