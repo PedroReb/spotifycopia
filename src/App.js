@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Importa useState
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Player from './components/Player';
@@ -9,24 +9,40 @@ import PlaylistDetails from './pages/PlaylistDetails';
 import './App.css';
 
 function App() {
-  const [currentSong, setCurrentSong] = useState(null); // Estado para la canción actual
-  const [favorites, setFavorites] = useState([]); // Estado para las canciones favoritas
+  const [currentSong, setCurrentSong] = useState(null);
+  const [favorites, setFavorites] = useState([]);
+
+  // Cargar favoritos desde localStorage al iniciar la aplicación
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    setFavorites(storedFavorites);
+  }, []);
+
+  // Guardar favoritos en localStorage cada vez que cambien
+  useEffect(() => {
+    if (favorites.length > 0) {
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+  }, [favorites]);
 
   const handleSongSelect = (song) => {
     setCurrentSong({
       title: song.name,
-      artist: song.artists[0].name,
+      artist: song.artists,
       preview_url: song.preview_url,
+      image: song.image,
     });
   };
 
   const handleToggleFavorite = (song) => {
     if (favorites.some((fav) => fav.id === song.id)) {
       // Si la canción ya está en favoritos, la elimina
-      setFavorites(favorites.filter((fav) => fav.id !== song.id));
+      const updatedFavorites = favorites.filter((fav) => fav.id !== song.id);
+      setFavorites(updatedFavorites);
     } else {
       // Si no está en favoritos, la añade
-      setFavorites([...favorites, song]);
+      const updatedFavorites = [...favorites, song];
+      setFavorites(updatedFavorites);
     }
   };
 
@@ -42,7 +58,7 @@ function App() {
               <Search
                 onSongSelect={handleSongSelect}
                 onToggleFavorite={handleToggleFavorite}
-                favorites={favorites} // Pasa favorites como prop
+                favorites={favorites}
               />
             }
           />

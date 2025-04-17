@@ -21,9 +21,7 @@ function Navbar() {
           <li><a href="/library">Tu Biblioteca</a></li>
           <li><a href="/playlists">Tus Playlists</a></li>
         </ul>
-        <button className="close-button" onClick={toggleSidebar}>
-          ✖
-        </button>
+       
       </div>
     </div>
   );

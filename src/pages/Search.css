@@ -1,28 +1,122 @@
+/* Estilo general de la página de búsqueda */
+.search-page {
+  padding: 2rem;
+  color: white;
+  background-color: #121212;
+  min-height: 100vh;
+}
+
+.search-page h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.search-page input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background-color: #282828;
+  color: white;
+}
+
+.search-page input::placeholder {
+  color: #aaa;
+}
+
+.search-page button {
+  background-color: #1db954;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.search-page button:hover {
+  background-color: #1ed760;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.search-item {
+  background-color: #282828;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.search-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.album-cover {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.song-info {
+  margin-bottom: 1rem;
+}
+
+.song-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.song-artist {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
 .toggle-favorite {
-    background-color: #1db954;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .toggle-favorite:hover {
-    background-color: #1ed760;
-  }
-  
-  /* filepath: /Users/pedroreb/Documents/spotifycopia/src/pages/Library.css */
-  .remove-favorite {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .remove-favorite:hover {
-    background-color: #c0392b;
-  }
+  background-color: #1db954;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 0.5rem;
+}
+
+.toggle-favorite:hover {
+  background-color: #1ed760;
+}
+
+.play-button {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 0.5rem;
+}
+
+.play-button:hover {
+  background-color: #1c86ee;
+}

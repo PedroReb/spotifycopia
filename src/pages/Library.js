@@ -12,13 +12,13 @@ function Library({ favorites, onToggleFavorite }) {
           {favorites.map((song) => (
             <div key={song.id} className="favorite-item">
               <img
-                src={song.album.images[0]?.url}
+                src={song.image}
                 alt={song.name}
                 className="album-cover"
               />
               <div className="song-info">
                 <p className="song-title">{song.name}</p>
-                <p className="song-artist">{song.artists[0].name}</p>
+                <p className="song-artist">{song.artists}</p>
               </div>
               <button
                 className="remove-favorite"
