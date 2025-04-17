@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { searchSongs } from '../api/spotify'; // Importa la función de búsqueda
+import { searchSongs } from '../api/spotify';
 import './Search.css';
 
 function Search({ onSongSelect, onToggleFavorite, favorites = [] }) {
@@ -11,7 +11,7 @@ function Search({ onSongSelect, onToggleFavorite, favorites = [] }) {
     if (!query) return;
 
     try {
-      const tracks = await searchSongs(query); // Usa la función de búsqueda
+      const tracks = await searchSongs(query);
       const formattedTracks = tracks.map((track) => ({
         id: track.id,
         name: track.name,

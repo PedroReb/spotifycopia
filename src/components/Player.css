@@ -1,20 +1,42 @@
-.player {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #282c34;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .player-info {
-    margin: 0 0 0.5rem;
-    font-size: 1rem;
-  }
-  
-  .player-placeholder {
-    font-size: 1rem;
-    color: #bbb;
-  }
+.queue {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.queue h4 {
+  margin-bottom: 0.5rem;
+}
+
+.queue ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.queue-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #282828;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.queue-item span:hover {
+  color: white;
+}
+
+.queue-item button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.queue-item button:hover {
+  background-color: #c0392b;
+}

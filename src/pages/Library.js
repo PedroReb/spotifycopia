@@ -1,7 +1,8 @@
 import React from 'react';
 import './Library.css';
 
-function Library({ favorites, onToggleFavorite }) {
+function Library({ favorites, onToggleFavorite , onSongSelect }) {
+  
   return (
     <div className="library-page">
       <h2>Tu Biblioteca</h2>
@@ -10,7 +11,9 @@ function Library({ favorites, onToggleFavorite }) {
       ) : (
         <div className="favorites-list">
           {favorites.map((song) => (
-            <div key={song.id} className="favorite-item">
+            <div key={song.id} className="favorite-item"
+               onClick={() => onSongSelect(song)} 
+               style={{ cursor: 'pointer' }}>
               <img
                 src={song.image}
                 alt={song.name}
@@ -21,9 +24,12 @@ function Library({ favorites, onToggleFavorite }) {
                 <p className="song-artist">{song.artists}</p>
               </div>
               <button
-                className="remove-favorite"
-                onClick={() => onToggleFavorite(song)}
-              >
+                 className="remove-favorite"
+                 onClick={(e) => {
+                   e.stopPropagation(); 
+                   onToggleFavorite(song);
+                 }}
+               >
                 Quitar de Favoritos
               </button>
             </div>

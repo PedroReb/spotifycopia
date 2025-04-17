@@ -1,114 +1,116 @@
+/* Estilo general */
 .home {
-    display: flex;
-    height: 100vh;
-    background: linear-gradient(180deg, #121212, #181818);
-    color: white;
-  }
-  
- 
-  
-  .logo {
-    font-size: 1.8rem;
-    color: #1db954;
-    font-weight: bold;
-  }
-  
-  .nav-links {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .nav-links li {
-    margin: 1rem 0;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: #1db954;
-  }
-  
-  .create-playlist {
-    background-color: #1db954;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .create-playlist:hover {
-    background-color: #1ed760;
-  }
-  
-  .main-content {
-    flex: 1;
-    margin-left: 20%;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-  }
-  
-  .header {
-    padding: 1rem;
-    background-color: #282828;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+  padding: 2rem;
+  background-color: #121212;
+  color: white;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.content {
+  margin-bottom: 3rem;
+}
+
+.content h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Carrusel */
+.carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background-color: #1db954;
+  border-radius: 4px;
+}
+
+.carousel::-webkit-scrollbar-track {
+  background-color: #282828;
+}
+
+/* Tarjetas */
+.card {
+  background-color: #181818;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px;
+  max-width: 250px;
+  flex-shrink: 0;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.card p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  margin: 0.5rem 0;
+}
+
+/* Información de canciones */
+.song-info {
+  margin-top: 0.5rem;
+}
+
+.song-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.song-artist {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
   .header h2 {
-    margin: 22px;
+    font-size: 2rem;
+  }
+
+  .content h3 {
     font-size: 1.5rem;
   }
-  
-  .search-bar {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    width: 300px;
-  }
-  
-  .content {
-    padding: 1rem;
-  }
-  
-  .carousel {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    padding: 1rem 0;
-  }
-  
+
   .card {
-    background-color: #181818;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
     min-width: 150px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 200px;
   }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+
+  .song-title {
+    font-size: 0.9rem;
   }
-  
-  .card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
+
+  .song-artist {
+    font-size: 0.8rem;
   }
-  
-  .card p {
-    margin: 0;
-    font-size: 1rem;
-    color: #ccc;
-  }
+}
